@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: zipkin
+server:
+  port: 6001
+

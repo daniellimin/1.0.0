@@ -79,7 +79,55 @@
                 <artifactId>commons-fileupload</artifactId>
                 <version>1.3.3</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.4</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- utils end-->
+            <!-- datasource start -->
+            <!--数据库相关-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.3.2</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>5.1.46</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.9</version>
+            </dependency>
+            <!-- datasource end -->
+            <!-- zipkin 可视化支持 start -->
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-core</artifactId>
+                <version>4.13.5</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-spancollector-http</artifactId>
+                <version>4.13.5</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-web-servlet-filter</artifactId>
+                <version>4.13.5</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-okhttp</artifactId>
+                <version>4.13.5</version>
+            </dependency>
+            <!-- zipkin 可视化支持 end -->
         </dependencies>
     </dependencyManagement>
 
@@ -93,11 +141,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!--<repository>-->
-            <!--<id>alibaba</id>-->
-            <!--<name>alibaba</name>-->
-            <!--<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-        <!--</repository>-->
+        <repository>
+            <id>alibaba</id>
+            <name>alibaba</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
     </repositories>
 
     <build>
@@ -113,6 +161,10 @@
     <modules>
         <module>could-eureka-7001</module>
         <module>cloud-common</module>
+        <module>cloud-eureka-client-9001</module>
+        <module>cloud-common-db</module>
+        <module>cloud-zipkin-6001</module>
+        <module>cloud-config-5001</module>
     </modules>
 
 </project>

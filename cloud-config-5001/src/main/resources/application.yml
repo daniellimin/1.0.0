@@ -1,0 +1,25 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: config-server
+  security:
+    basic:
+      enabled: true
+#    user:
+#      name: root
+#      password: 123456
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/daniellimin/cloud-config
+          search-paths: '{application}'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    appname: config-server
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true

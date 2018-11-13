@@ -19,12 +19,8 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     private static ApplicationContext context = null;
 
-    public void setApplicationContext(ApplicationContext newContext)throws BeansException {
-        SpringContextUtils.setContext(newContext);
-    }
-
     private static void setContext(ApplicationContext newContext) {
-        if(context==null) {
+        if (context == null) {
             context = newContext;
         }
     }
@@ -34,7 +30,7 @@ public class SpringContextUtils implements ApplicationContextAware {
         return context.getBean(beanName);
     }
 
-    public static<T> T getBean(Class<T> c) throws BeansException {
+    public static <T> T getBean(Class<T> c) throws BeansException {
         return context.getBean(c);
     }
 
@@ -42,13 +38,13 @@ public class SpringContextUtils implements ApplicationContextAware {
         return context.getBean(beanId, clazz);
     }
 
-
     /**
      * 根据错误code得到错误明细
-     * @param code  错误代码
-     * @param params 参数
+     *
+     * @param code        错误代码
+     * @param params      参数
      * @param defaultDesc 默认描述
-     * @param local 本地语言环境
+     * @param local       本地语言环境
      * @return
      */
     public static String getMessage(String code, Object[] params, String defaultDesc, Locale local) {
@@ -57,9 +53,10 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     /**
      * 根据错误code得到错误明细
-     * @param code  错误代码
+     *
+     * @param code   错误代码
      * @param params 参数
-     * @param local 本地语言环境
+     * @param local  本地语言环境
      * @return
      */
     public static String getMessage(String code, Object[] params, Locale local) {
@@ -68,11 +65,12 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     /**
      * 获取 HttpServletRequest 对象
+     *
      * @return
      */
-    public static HttpServletRequest getRequest(){
+    public static HttpServletRequest getRequest() {
         HttpServletRequest request = null;
-        if(null != RequestContextHolder.getRequestAttributes()){
+        if (null != RequestContextHolder.getRequestAttributes()) {
             request = ((ServletRequestAttributes) RequestContextHolder
                     .getRequestAttributes()).getRequest();
         }
@@ -81,10 +79,15 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     /**
      * 获取本地语言环境
+     *
      * @param request
      * @return
      */
-    public static Locale getLocale(HttpServletRequest request){
+    public static Locale getLocale(HttpServletRequest request) {
         return RequestContextUtils.getLocaleResolver(request).resolveLocale(request);
+    }
+
+    public void setApplicationContext(ApplicationContext newContext) throws BeansException {
+        SpringContextUtils.setContext(newContext);
     }
 }

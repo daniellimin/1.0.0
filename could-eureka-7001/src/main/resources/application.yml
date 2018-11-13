@@ -1,6 +1,13 @@
 spring:
   application:
     name: eureka
+#  security:
+#    basic:
+#      enabled: true
+#    user:
+#      name: root
+#      password: 123456
+
 
 server:
   port: 7001
@@ -8,8 +15,12 @@ server:
 eureka:
   instance:
     hostname: localhost
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
+#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
