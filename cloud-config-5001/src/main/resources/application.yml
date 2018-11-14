@@ -2,7 +2,7 @@ server:
   port: 5001
 spring:
   application:
-    name: config-server
+    name: cloud-config-server
   security:
     basic:
       enabled: true
@@ -18,8 +18,8 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka:7001/eureka/
   instance:
-    appname: config-server
+    appname: cloud-config-server
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     prefer-ip-address: true

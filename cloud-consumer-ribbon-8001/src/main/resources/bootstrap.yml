@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cloud-provider-1
+    name: cloud-consumer-ribbon
   cloud:
     config:
       discovery:
@@ -14,7 +14,7 @@ eureka:
     service-url:
       defaultZone: http://eureka:7001/eureka/
   instance:
-    appname: cloud-provider
+    appname: cloud-consumer-ribbon
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 
