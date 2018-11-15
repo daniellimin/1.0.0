@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: cloud-zuul
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: cloud-config-server
+      fail-fast: true
+      profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:7001/eureka/
+  instance:
+    appname: cloud-zuul
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+#修改参数设置
+# Get  http://hostname:port/actuator/env 获取配置信息
+# Post http://hostname:port/actuator/env 修改配置信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
