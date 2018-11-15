@@ -1,13 +1,13 @@
 spring:
   application:
-    name: cloud-provider-1
+    name: cloud-provider
   cloud:
     config:
       discovery:
         enabled: true
         service-id: cloud-config-server
       fail-fast: true
-      profile: dev
+      profile: dev1
 
 eureka:
   client:

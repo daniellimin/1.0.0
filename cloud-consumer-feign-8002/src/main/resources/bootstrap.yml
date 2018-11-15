@@ -1,20 +1,20 @@
 spring:
   application:
-    name: cloud-provider
+    name: cloud-consumer-feign
   cloud:
     config:
       discovery:
         enabled: true
         service-id: cloud-config-server
       fail-fast: true
-      profile: dev2
+      profile: dev
 
 eureka:
   client:
     service-url:
       defaultZone: http://eureka:7001/eureka/
   instance:
-    appname: cloud-provider
+    appname: cloud-consumer-feign
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 

@@ -102,12 +102,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.9</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>1.1.9</version>
+                <version>1.1.10</version>
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -177,11 +172,11 @@
         <module>cloud-config-5001</module>
         <module>cloud-provider-9001</module>
         <module>cloud-zipkin-6001</module>
-
         <module>cloud-common-db</module>
         <module>cloud-common</module>
         <module>cloud-consumer-ribbon-8001</module>
         <module>cloud-provider-9002</module>
+        <module>cloud-consumer-feign-8002</module>
     </modules>
 
 </project>
