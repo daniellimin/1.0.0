@@ -15,7 +15,7 @@ public class RibbonConfig {
 
     @Bean
     @LoadBalanced
-    public RestTemplate initRestTemplate(){
+    public RestTemplate initRestTemplate() {
         return builder.build();
     }
 

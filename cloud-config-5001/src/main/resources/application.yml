@@ -6,9 +6,9 @@ spring:
   security:
     basic:
       enabled: true
-#    user:
-#      name: root
-#      password: 123456
+  #    user:
+  #      name: root
+  #      password: 123456
   cloud:
     config:
       server:

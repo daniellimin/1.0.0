@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 public class DruidConfig {
 
     @Bean
-    public FilterRegistrationBean statFilter(){
+    public FilterRegistrationBean statFilter() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");
-        filterRegistrationBean.addInitParameter("exclutions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,");
+        filterRegistrationBean.addInitParameter("exclutions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*,");
         return filterRegistrationBean;
     }
 

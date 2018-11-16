@@ -10,7 +10,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableHystrix
 @EnableCircuitBreaker
 //@RibbonClient(name = "*") //如果只针对某个服务做负载均衡就加上
-@EnableDiscoveryClient 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Consumer_Ribbon_8001_App {
 

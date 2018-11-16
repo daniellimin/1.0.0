@@ -13,13 +13,13 @@ import java.util.List;
 public class TestController {
 
     @RequestMapping("testMono")
-    public String testMono(String msg, HttpServletRequest request){
+    public String testMono(String msg, HttpServletRequest request) {
         System.out.println(request.getRequestURL());
         return JSONUtils.toJSONString(msg);
     }
 
     @RequestMapping("testFlux")
-    public String testFlux(String msg1,String msg2,HttpServletRequest request){
+    public String testFlux(String msg1, String msg2, HttpServletRequest request) {
         System.out.println(request.getRequestURL());
         List<String> list = new ArrayList<>();
         list.add(msg1);

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FeignClientConfig {
     @Bean
-    public Logger.Level setLevel(){
+    public Logger.Level setLevel() {
         return Logger.Level.FULL;
     }
 }

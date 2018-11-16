@@ -12,13 +12,13 @@ public class ProviderController {
     private ProviderClient client;
 
     @RequestMapping("test")
-    public String test(String msg){
+    public String test(String msg) {
         return client.test(msg);
     }
 
     @RequestMapping("test1")
-    public String test1(String msg1,String msg2){
-        return client.test1(msg1,msg2);
+    public String test1(String msg1, String msg2) {
+        return client.test1(msg1, msg2);
     }
 
 
